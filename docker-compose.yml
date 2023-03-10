@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mirrorbot:
+    image: ghcr.io/philipinho/mirrorbot:latest
+    container_name: mirrorbot
+    env_file:
+      - .env
+    restart: unless-stopped

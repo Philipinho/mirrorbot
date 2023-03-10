@@ -1,16 +1,18 @@
-name: publish
+name: build
 
-on: [push]
+on:
+  push:
+    branches: master
 
 jobs:
-  publish-mirrorbot-image:
+  build-mirrorbot-image:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
+      uses: docker/login-action@v2
       with:
         registry: ghcr.io
         username: ${{ github.actor }}

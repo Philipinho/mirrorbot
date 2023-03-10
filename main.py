@@ -56,11 +56,11 @@ def push_link(post_id, mirror_url):
 
 
 def delete_link(post_id, mirror_url):
+
     json_data = {
-        "data": {
-            "redditPostId": post_id,
-            "url": mirror_url
-        }
+        "redditPostId": post_id,
+        "linkUrl": mirror_url,
+        "linkType": "download"
     }
 
     req = {}
@@ -91,8 +91,6 @@ def authenticate():
 if __name__ == '__main__':
     try:
         reddit = authenticate()
-
-        print("Successfully authenticated " + username + ". Starting started.")
 
         for submission in reddit.subreddit(sub_reddit_name).stream.submissions():
 

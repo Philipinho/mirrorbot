@@ -19,5 +19,4 @@ jobs:
     - name: Build the mirrorbot Docker image
       run: |
         docker build . --tag ghcr.io/philipinho/mirrorbot:latest
-        docker run ghcr.io/philipinho/mirrorbot:latest
         docker push ghcr.io/philipinho/mirrorbot:latest

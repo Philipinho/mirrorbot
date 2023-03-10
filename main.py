@@ -92,6 +92,8 @@ if __name__ == '__main__':
     try:
         reddit = authenticate()
 
+        print("Successfully authenticated " + username + ". Starting started.")
+
         for submission in reddit.subreddit(sub_reddit_name).stream.submissions():
 
             if validate(submission):
